@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My First HTML Page</title>
+  </head>
+  <body>
+    <p>This is some text...</p>
+    <div id="Section1">
+      <h1>Cars</h1>
+      <ol type="1">
+        <li><a href="https://www.ferrari.com" target="_blank">Ferrai</a></li>
+        <br>
+        <li>I don'y know speeling of other car</li>
+      </ol>
+      <h1>Greetings</h1>
+      <ul id="Section2">
+        <li>hello</li>
+        <br>
+        <li>hii</li>
+        <br>
+        <li>By</li>
+      </ul>
+    </div>
+    <div id="Section 3">
+      <p>
+        <b>Hi.. I'm Bold</b>
+        <br>
+        <i>Hello.. I'm Italic</i>
+        <br>
+        <u>Namaste.. I'm Underline</u>
+        <br>
+        <q>Everyone hate or love Programming depending on status of bug</q>
+        <br>
+        <strong>Hey... I'm Strong</strong>
+        <br>
+        <em>Give me some emphasis</em>
+        <br>
+        hello<sup>superscript</sup>
+        <br>
+        by<sub>subscript</sub>
+      </p>
+    </div>
+    <div id="Section4">
+    <img src="/home/prk/Pictures/Wallpapers/953900.jpg" alt="SpiderMon" style="width:1200px;height:600px;" id="imgClickAndChange" onclick="changeImage()">
+    <script language="javascript">
+    function changeImage() {
+        if (document.getElementById("imgClickAndChange").src == "file:///home/prk/Pictures/Wallpapers/953900.jpg")
+        {
+
+            document.getElementById("imgClickAndChange").src = "/home/prk/Pictures/929202.jpg";
+        }
+        else
+        {
+            document.getElementById("imgClickAndChange").src = "/home/prk/Pictures/Wallpapers/953900.jpg";
+        }
+    }
+  </script>
+    </div>
+  </body>
+</html>
