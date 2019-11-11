@@ -1,0 +1,12 @@
+h1 {color: blue}
+div {
+  border: 1px solid powderblue
+}
+p {
+  font-family: verdana;
+  margin: 20px;
+}
+#Section2 {
+  color: gold;
+}
+.center{text-align: right;color: green}
