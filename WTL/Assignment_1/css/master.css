@@ -1,0 +1,18 @@
+.LogIn{
+  border: solid gray 1px;
+  margin: auto;
+  width: 250px;
+  padding-left: 30px
+}
+.SignIn{
+  margin: auto;
+  width: 30%;
+  border: solid gray 1px;
+  padding: 50px ;
+  text-align: center;
+}
+
+.data{
+  margin: auto;
+  width: 30%
+}
