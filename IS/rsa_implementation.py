@@ -32,13 +32,17 @@ def main():
     while isPrime(q) == False:
         q = int(input("{} is not prime number, Enter again : ".format(q)))
     n = p*q
+    print(" Value of \'n\' is :", n)
     phi = (p-1)*(q-1)
+    print(" Value of \'phi\' is :", phi)
     for e in range(2, phi):
         if gcd(e, phi)==1:
             break
+    print(" Value of \'e\' is :", e)
     for d in range(2, phi):
         if (d*e)%phi==1:
             break
+    print(" Value of \'d\' is :", d)
 
     m = int(input("Enter any numerical message to encrypt : "))
     encrypted_message = pow(m, e)%n
