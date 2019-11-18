@@ -14,6 +14,8 @@ import java.security.NoSuchAlgorithmException;
 
 public class Hashing {
     public static String hash(String method, String input) {
+      //This function Takes a hashing String containing method like SHA-512 or SHA3-512
+      //and a input string and returns a hash value as a string
         try {
             MessageDigest md = MessageDigest.getInstance(method);
             md.update(input.getBytes());
@@ -31,6 +33,8 @@ public class Hashing {
     }
 
     public static String hash(String method, File file) throws IOException {
+      //This function Takes a hashing String containing method like SHA-512 or SHA3-512
+      //and a input file and returns a hash value as a string
         try {
             MessageDigest md = MessageDigest.getInstance(method);
             FileInputStream fis = new FileInputStream(file);
