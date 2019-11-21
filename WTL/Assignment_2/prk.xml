@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="movies.xsl"?>
+<!DOCTYPE movies
+[
+<!ELEMENT movies (movie*)>
+<!ELEMENT movie (name, producer)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT producer (#PCDATA)>
+]>
+<movies>
+	<movie>
+		<name>ABC</name>
+		<producer>XYZ</producer>
+	</movie>
+	<movie>
+		<name>ABC</name>
+		<producer>XYZ</producer>
+	</movie>
+
+  </movies>
+

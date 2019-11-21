@@ -16,3 +16,13 @@
   margin: auto;
   width: 30%
 }
+
+.bg-image{
+  background-image: url("/home/prk/Pictures/929202.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  height: 100%;
+}
