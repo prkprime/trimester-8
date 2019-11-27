@@ -4,3 +4,4 @@ DWDM/Rdatasets
 *.txt
 *.class
 .key
+*temp*
