@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>erp</title>
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body class="bg-image">
+    <h1>ERP MITWPU</h1>
+    <form class="SignIn" name="form1"  method="post">
+      First Name : <br>
+      <input type="text" name="txtFirstName" value=""  ><br>
+      Middle Name : <br>
+      <input type="text" name="txtMiddleName" value=""><br>
+      Last Name : <br>
+      <input type="text" name="txtLastName" value=""  ><br>
+      Father Name : <br>
+      <input type="text" name="txtFatherName" value="" ><br>
+      Mother Name : <br>
+      <input type="text" name="txtMotherName" value="" ><br>
+      <div class="">
+        Gender : <br>
+        <input type="radio" name="radioGender" value="Male">Male<br>
+        <input type="radio" name="radioGender" value="Female">Female<br>
+        <input type="radio" name="radioGender" value="Other" checked>Other<br>
+      </div>
+      Date Of Birth : <br>
+      <input type="date" name="" value=""  ><br>
+      Email Id : <br>
+      <input type="text" name="emailEmailId" id="emailEmailId1" value=""  ><br>
+      Contact Number :<br>
+      <input type="tel" id="tel1" name="telContactNumber" value=""  ><br>
+      Address Line 1 : <br>
+      <input type="text" name="txtAddressLine1" value=""  ><br>
+      Address Line 2 : <br>
+      <input type="text" name="txtAddressLine2" value=""><br>
+      City : <br>
+      <input type="text" name="txtCity" value=""  ><br>
+      State : <br>
+      <select class="btnDrop" name="btnState">
+        <option value="maharashtra">Maharashtra</option>
+        <option value="other">Other</option>
+      </select><br>
+      Country : <br>
+      <select class="btnDrop" name="btnCountry">
+        <option value="india">India</option>
+        <option value="other">Other</option>
+      </select><br>
+      Password : <br>
+      <input type="password" id="password" name="" value=""  ><br>
+      Confirm Password : <br>
+      <input type="password" id="confirm_password" name="" value=""><br>
+      <input type="submit" name="btnSubmit" value="Submit">
+      <input type="reset" name="btnReset" value="Reset">
+    </form>
+     <script src="js/emailValidation.js"></script>
+     <script src="js/contactNoValidation.js"></script>
+     <script src="js/passwordValidation.js"></script>
+  </body>
+</html>
