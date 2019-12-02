@@ -4,12 +4,14 @@ Year : T.Y. B.Tech
 Panel : 2
 Batch : B2
 Roll No. : PB02
+usage : python3 monoalphabetic_cipher.py
 """
 
 from string import ascii_letters, digits
 from random import shuffle
 
 def monoalpha_cipher():
+    #returns a random dictonary for monoalphabetic cipher for encryption
     pool = ascii_letters + digits
     original_pool = list(pool)
     shuffled_pool = list(pool)
@@ -17,12 +19,14 @@ def monoalpha_cipher():
     return dict(zip(original_pool, shuffled_pool))
 
 def reverse_monoalpha_cipher(monoalpha_cipher):
+    #creates inverse dictionary of monoalphabetic cipher for decryption
     reverse_monoalpha_cipher = {}
     for key, value in monoalpha_cipher.items():
         reverse_monoalpha_cipher[value] = key
     return reverse_monoalpha_cipher
 
 def encrypt(message, monoalpha_cipher):
+    #takes message and encryption dictionary and returns encrypted text
     encrypted_message = []
     for letter in message:
         letter1 = monoalpha_cipher.get(letter)
@@ -33,6 +37,7 @@ def encrypt(message, monoalpha_cipher):
     return "".join(encrypted_message)
 
 def decrypt(message, reverse_monoalpha_cipher):
+    #ttakes encrypted text and decryption dictonary and returns decrypted text
     decrypted_message = []
     for letter in message:
         letter1 = reverse_monoalpha_cipher.get(letter)

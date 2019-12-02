@@ -4,6 +4,7 @@ Year : T.Y. B.Tech
 Panel : 2
 Batch : B2
 Roll No. : PB02
+Usage : java Hashing.java <Algorithm name> <String/File> <File name/Path / String>
 */
 
 import java.io.File;

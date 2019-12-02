@@ -4,8 +4,11 @@ Year : T.Y. B.Tech
 Panel : 2
 Batch : B2
 Roll No. : PB02
+usage : python3 caesar_cipher.py
 """
+
 def encrypt(message):
+    # this function encrypts the plain text using caesar cipher and returns cipher text
     char_list = list(message)
     encoded_char_list = []
     for char in char_list:
@@ -24,6 +27,7 @@ def encrypt(message):
     return list_to_string(encoded_char_list)
 
 def decrypt(message):
+    #this function decrypts the text encrypted by encrypt function and returns decrypted string
     char_list = list(message)
     encoded_char_list = []
     for char in char_list:
@@ -42,6 +46,7 @@ def decrypt(message):
     return list_to_string(encoded_char_list)
 
 def list_to_string(list):
+    #converts list to string
     str1 = ""
     for char in list:
         str1 += char

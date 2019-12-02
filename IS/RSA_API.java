@@ -20,6 +20,7 @@ import java.util.Base64;
 public class RSA_API {
 
     public static KeyPair generateKeys() throws NoSuchAlgorithmException {
+      //This function creates pair of public and prvate keys for RSA
        try {
            KeyPairGenerator mypair = KeyPairGenerator.getInstance("RSA");
            SecureRandom random = new SecureRandom();
@@ -32,6 +33,7 @@ public class RSA_API {
     }
 
     public static String encrypt(String message, java.security.PublicKey key) {
+      //function takes plain text and public key and returns encrypted text
         try {
             final Cipher cipher = Cipher.getInstance("RSA");
             cipher.init(Cipher.ENCRYPT_MODE, key);
@@ -53,6 +55,7 @@ public class RSA_API {
     }
 
     public static String decrypt(String message, java.security.PrivateKey key) {
+      //takes encrypted text and private key and returns decrypted text
         try {
             final Cipher cipher = Cipher.getInstance("RSA");
             cipher.init(Cipher.DECRYPT_MODE, key);
