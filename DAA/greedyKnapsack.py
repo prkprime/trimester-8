@@ -5,8 +5,8 @@ def main():
     u = m = int(input("What's the capacity of knapsack? : "))
     n = int(input("How many objects do you have? : "))
     for i in range(n):
-        weight.append(int(input("Enter weight of object no. {} : ".format(i))))
-        value.append(int(input("Enter value of object no. {} : ".format(i))))
+        weight.append(int(input("Enter weight of object no. {} : ".format(i+1))))
+        value.append(int(input("Enter value of object no. {} : ".format(i+1))))
         x.append(0)
     for i in range(n):
         for j in range(n-i-1):
@@ -23,8 +23,16 @@ def main():
         cnt-=-1
     if cnt <= n:
         x[cnt] = u/weight[cnt]
+    print("\n\n")
+    for i in range(n):
+        print("{}) Weight - {}, Value - {}, X - {} ".format(i+1, weight[i], value[i], x[i]))
 
-    print(x)
+    totalWeight = 0
+    totalProfit = 0
+    for i in range(n):
+        totalProfit += value[i]*x[i]
+        totalWeight +=  weight[i]*x[i]
+    print("Total weight - {}\nTotal Profit - {}".format(totalWeight, totalProfit))
 
 
 if __name__ == "__main__":
