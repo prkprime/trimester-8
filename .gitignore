@@ -5,3 +5,4 @@ DWDM/Rdatasets
 *.class
 .key
 *temp*
+*.out
