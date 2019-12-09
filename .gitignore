@@ -3,6 +3,6 @@ DWDM/Rdatasets
 *.csv
 *.txt
 *.class
-.key
+*.key
 *temp*
 *.out
