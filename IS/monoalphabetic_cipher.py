@@ -50,6 +50,7 @@ def decrypt(message, reverse_monoalpha_cipher):
 def main():
     monoalpha_cipher_dict = monoalpha_cipher()
     reverse_monoalpha_cipher_dict = reverse_monoalpha_cipher(monoalpha_cipher_dict)
+    print(monoalpha_cipher_dict)
     message = str(input('Write something : '))
     encrypted_message_string = encrypt(message, monoalpha_cipher_dict)
     print('Encrypted message is : ', encrypted_message_string)
