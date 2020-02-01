@@ -1,75 +1,63 @@
-#include<stdio.h>
-#include<omp.h>
-
-void serial_bubble(long long int size) {
-  long long int arr[size];
-  #pragma omp parallel num_threads(8)
-  {
-    #pragma omp for
-    for(long int i = 0; i < size; i++) {
-      arr[i] = size - i;
-    }
-  }
-
-  printf("hello\n");
-  double start_time = omp_get_wtime();
-  for(int i=0; i<size; i++) {
-    for(int j=0; j<size-i-1; j++) {
-      if(arr[j]>arr[j+1]) {
-        long long int temp = arr[j];
-        arr[j] = arr[j+1];
-        arr[j+1] = temp;
-      }
-    }
-  }
-  printf("Serial time = %lf \n", omp_get_wtime()-start_time );
-}
-
-void parallel_sort() {
-  long long int arr[size];
-  #pragma omp parallel num_threads(8)
-  {
-    #pragma omp for
-    for(long int i = 0; i < size; i++) {
-      arr[i] = size - i;
-    }
-  }
-
-  printf("hello\n");
-  double start_time = omp_get_wtime();
-  #pragma omp parallel num_threads(omp_get_max_threads())
-  {
-    #pragma omp for
-    for(int i=0; i<size; i++) {
-      for(int j=0; j<size-i-1; j++) {
-        if(arr[j]>arr[j+1]) {
-          long long int temp = arr[j];
-          arr[j] = arr[j+1];
-          arr[j+1] = temp;
-        }
-      }
-    }
-  }
-  printf("Serial time = %lf \n", omp_get_wtime()-start_time );
-}
+#include <omp.h>
+#include <stdio.h>
 
 int main() {
-  long long int size;
+    unsigned long long int i, j, k, size, temp;
+    printf("Enter size of array!\n");
+    printf("size: ");
+    scanf("%llu", &size);
+    unsigned long long int n[size];
+    unsigned long long int a, b;
 
-  int choice = 0;
-  do {
-    printf("\nEnter size : ");
-    scanf("%lld", &size);
-    printf("\nEnter\t\n0 : Exit\n\t1 : Serial Bubble Sort\n\t2 : Parallel Bubble Sort\n");
-    scanf("%d", &choice);
-    if(choice==0) {
-      return 0;
+#pragma omp for
+    for (i = 0; i < size; i++) {
+        n[i] = size - i;
     }
-    else if(choice==1) {
-      serial_bubble(size);
+
+    double s = omp_get_wtime();
+    for (i = 0; i < size / 2; i++) {
+#pragma omp parallel for private(temp)
+        for (j = 0; j < size - 1; j += 2) {
+            //printf("We are at i=%llu|j=%llu|thread=%d\n", i, j,omp_get_thread_num());
+            if (n[j] > n[j + 1]) {
+                temp = n[j];
+                n[j] = n[j + 1];
+                n[j + 1] = temp;
+            }
+        }
+#pragma omp parallel for private(temp)
+        for (k = 1; k < size - 1; k += 2) {
+            //printf("We are at i=%llu|k=%llu|thread=%d\n", i, k,omp_get_thread_num());
+            if (n[k] > n[k + 1]) {
+                temp = n[k];
+                n[k] = n[k + 1];
+                n[k + 1] = temp;
+            }
+        }
     }
-    else if(choice==2) {
-      parallel_sort(size);
+    s = omp_get_wtime() - s;
+    printf("Parallel execution time for size %llu: %f\n", size, s);
+    // for (unsigned long long int i = 0; i < size; i++) {
+    //     printf("n[%llu] = %llu\n", i, n[i]);
+    // }
+
+#pragma omp for
+    for (i = 0; i < size; i++) {
+        n[i] = size - i;
     }
-  } while(choice !=0);
+
+    s = omp_get_wtime();
+    for (unsigned long long int i = 0; i < size; i++) {
+        for (unsigned long long int j = 0; j < size - i - 1; j++) {
+            if (n[j] > n[j + 1]) {
+                // swap
+                temp = n[j];
+                n[j] = n[j + 1];
+                n[j + 1] = temp;
+            }
+        }
+    }
+    s = omp_get_wtime() - s;
+    printf("Serial execution time for size %llu: %f\n", size, s);
+    return 0;
 }
